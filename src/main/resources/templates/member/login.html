@@ -1,0 +1,35 @@
+<html lang="ko" layout:decorate="~{layouts/layout.html}" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <title>로그인</title>
+  <script defer th:src="@{/js/member/login.js}"></script>
+</head>
+<section layout:fragment="container" class="w-25" style="margin: 0 auto;">
+  <div class="alert alert-danger" role="alert" style="display: none;"></div>
+  <h2>로그인</h2>
+  <form th:action="@{/member/login}" method="POST" onsubmit="check(this); return false;">
+    <div class="form-control my-2 py-2 w-100">
+      <span>아이디</span>
+      <label for="username" class="w-100">
+        <input autofocus type="text" class="form-control" id="username" name="username" placeholder="아이디를 입력해주세요.">
+      </label>
+    </div>
+    <div class="form-control my-2 py-2">
+      <span>비밀번호</span>
+      <label for="password" class="w-100">
+        <input type="password" class="form-control" id="password" name="password" placeholder="비밀번호를 입력해주세요.">
+      </label>
+    </div>
+
+    <div class="d-grid gap-1">
+      <input class="btn btn-primary" type="submit" value="로그인">
+      <a th:href="@{/member/join}" class="btn btn-secondary">회원가입</a>
+    </div>
+
+
+    <div class="d-flex justify-content-center">
+      <a href="/member/findUsername" class="btn btn-link">아이디찾기</a>
+      <a href="/member/findPassword" class="btn btn-link">비밀번호 찾기</a>
+    </div>
+  </form>
+</section>
+</html>

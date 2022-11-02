@@ -19,14 +19,17 @@ public class MemberController {
 
     @GetMapping("/join")
     public String signUpForm() {
-        return "/member/sign-up";
+        return "member/sign-up";
     }
 
     @PostMapping("/join")
     public String signUp(Member member) throws MessagingException {
         memberService.join(member);
-
-        // 메일 발송
         return "redirect:/";
+    }
+
+    @GetMapping("/login")
+    public String loginForm() {
+        return "member/login";
     }
 }
