@@ -8,6 +8,8 @@ import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 import static lombok.AccessLevel.PROTECTED;
 
@@ -24,5 +26,6 @@ public class Member extends BaseEntity {
     private String email;
 
     @Column(name = "role")
+    @Enumerated(EnumType.STRING)
     private AuthLevel authLevel;
 }
