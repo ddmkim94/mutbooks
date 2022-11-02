@@ -1,0 +1,53 @@
+<html lang="ko" layout:decorate="~{layouts/layout.html}" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>회원가입</title>
+    <script defer th:src="@{/js/member/sign-up.js}"></script>
+</head>
+<section layout:fragment="container" class="w-25" style="margin: 0 auto;">
+    <div class="alert alert-danger" role="alert" style="display: none;"></div>
+    <h2>회원가입</h2>
+    <form th:action="@{/member/join}" method="POST" onsubmit="check(this); return false;">
+        <div class="form-control my-2 py-2 w-100">
+            <span>아이디</span>
+            <label for="username" class="w-100">
+                <input autofocus type="text" class="form-control" id="username" name="username" placeholder="아이디를 입력해주세요.">
+            </label>
+        </div>
+        <div class="form-control my-2 py-2">
+            <span>비밀번호</span>
+            <label for="password" class="w-100">
+                <input type="password" class="form-control" id="password" name="password" placeholder="비밀번호를 입력해주세요.">
+            </label>
+        </div>
+        <div class="form-control my-2 py-2">
+            <span>비밀번호확인</span>
+            <label for="passwordConfirm" class="w-100">
+                <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" placeholder="비밀번호를 한번 더 입력해주세요.">
+            </label>
+        </div>
+        <div class="form-control my-2 py-2">
+            <span>작가명</span>
+            <label for="nickname" class="w-100">
+                <input type="text" class="form-control" id="nickname" name="nickname" placeholder="작가명을 입력해주세요.">
+            </label>
+        </div>
+        <div class="form-control my-2 py-2">
+            <span>이메일</span>
+            <label for="email" class="w-100">
+                <input type="email" class="form-control" id="email" name="email" placeholder="이메일을 입력해주세요.">
+            </label>
+        </div>
+
+        <div class="d-grid gap-1">
+            <input class="btn btn-primary" type="submit" value="회원가입">
+            <a href="/member/login" class="btn btn-secondary">로그인</a>
+        </div>
+
+
+        <div class="d-flex justify-content-center">
+            <a href="/member/findUsername" class="btn btn-link">아이디찾기</a>
+            <a href="/member/findPassword" class="btn btn-link">비밀번호 찾기</a>
+        </div>
+    </form>
+</section>
+</html>
