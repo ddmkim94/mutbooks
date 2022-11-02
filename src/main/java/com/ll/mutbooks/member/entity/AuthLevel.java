@@ -5,11 +5,11 @@ import lombok.Getter;
 @Getter
 public enum AuthLevel {
 
-    USER(3L), AUTHOR(5L), ADMIN(7L);
+    USER("USER"), AUTHOR("AUTHOR"), ADMIN("ADMIN");
 
-    AuthLevel(Long level) {
-        this.level = level;
+    AuthLevel(String role) {
+        this.role = role;
     }
 
-    private final Long level;
+    private final String role;
 }

@@ -19,7 +19,7 @@ public class MemberController {
 
     @GetMapping("/join")
     public String signUpForm() {
-        return "member/sign-up";
+        return "member/signup_form";
     }
 
     @PostMapping("/join")
@@ -30,6 +30,6 @@ public class MemberController {
 
     @GetMapping("/login")
     public String loginForm() {
-        return "member/login";
+        return "member/login_form";
     }
 }
